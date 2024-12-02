@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pet Care Service</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel&family=DM+Serif+Display:ital@0;1&family=Handlee&family=Josefin+Sans:ital@0;1&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <!-- Custom CSS -->
+  <style>
+   .navbar {
+      transition: all 0.3s ease-in-out; 
+      height: 60px;
+      /* background-color: #007bff;  */
+      background: linear-gradient(135deg, #6DC4FF, #70A9FF, #7D98FF, #8D8DFF, #A085FF, #B27AFF, #C374FF, #D26EFF, #E06AFF);
+
+    }
+
+    .navbar-nav .nav-link {
+      color: whitesmoke !important;
+      font-weight: 400;
+      transition: color 0.3s; /* Transition effect on color change */
+    }
+
+    /* Navbar link hover effect */
+    .navbar-nav .nav-link:hover {
+      color: #ffc107 !important; /* Change color on hover */
+    }
+
+    /* Active link color */
+    .navbar-nav .nav-item.active .nav-link {
+      color: #ffc107 !important;
+    }
+
+   .carousel-item {
+      height: 600px; /* Adjust height as needed */
+      position: relative;
+    }
+    .carousel-item .background-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+    }
+    /* Caption Styling */
+    .carousel-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    /* Circle Styling */
+    .c1 {
+      text-align: center;
+      border-radius: 50%;
+      border: 10px solid rgb(77, 158, 250);
+      background-color: #f5f5f5;
+      width: 275px;
+      height: 275px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .c2 {
+      text-align: center;
+      border-radius: 50%;
+      border: 10px solid #f59528;
+      background-color: #f5f5f5;
+      width: 275px;
+      height: 275px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .col-md-6{
+      border-radius: 20px;
+      background-color: white;
+      height:750px;
+      width:500px;
+    }
+    .grid-section{
+      margin: 30px 40px 30px 90px;
+      background-color: rgb(93, 198, 247);;
+      border-radius: 15px;
+      width: 1100px;
+    }
+    .col-md-4{
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      border-radius: 15px;
+      margin-bottom: 20px;
+      color: white;
+    }
+    .col-md-4 h3{
+      font-family: 'Handlee',cursive;
+      font-weight: 400;
+      font-style: normal;
+    }
+    .trust{
+      height: 1800px;
+      background-color: rgb(40, 149, 250);
+    }
+    .img-fluid{
+      height: 350px;
+      border-radius: 10px;
+      margin-left: 70px;
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+    .learn-more-btn {
+            /* background: linear-gradient(to right, #FF8C00, #FF6347); */
+            background-color: rgb(45, 194, 231);
+            color: white;
+            border: 2px solid white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 30px;
+            cursor: pointer;
+            margin-left: 525px;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            transition: background 0.5s ease;
+}
+
+        .learn-more-btn:hover {
+            background: linear-gradient(to right, #98eaf5, #0051ff);
+        }
+        p{
+          font-family: "Poppins", sans-serif;
+          font-weight: 400;
+          font-style: normal;
+        }
+        h1{
+          font-family: "DM Serif Display", serif;
+          font-weight: 500;
+          font-style: normal;
+}
+        .service-card h3{
+          font-family: 'Handlee',cursive;
+          font-weight: 500;
+          font-style: normal;
+          text-align: center;color: rgb(93, 198, 247);
+        }
+        .contact-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.left-info, .right-info {
+    width: 45%;
+}
+        
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="Main.html"><img src="./Images/WhiteLogo.webp" style="height: 40px;width: 100px;"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="Main.html" style="color: whitesmoke;font-weight: 400;">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="FindFetch.html" style="color: whitesmoke;font-weight: 400;">Find Fetch</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="Services.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: whitesmoke;font-weight: 400;">
+                      Services
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="#">Puppy Sitting</a>
+                      <a class="dropdown-item" href="#">Dog Walking</a>
+                      <a class="dropdown-item" href="#">Pet Sitting</a>
+                      <a class="dropdown-item" href="#">Overnight Care</a>
+                      <a class="dropdown-item" href="#">Emergency Commute</a>
+                      <a class="dropdown-item" href="#">Pet Medical Administration</a>
+                    </div>
+                  </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="Why_Fetch.html" style="color: whitesmoke;font-weight: 400;">Why Fetch</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Reviews.html" style="color: whitesmoke;font-weight: 400;">Reviews</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact" style="color: whitesmoke;font-weight: 400;">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+  
+
+  <!-- Carousel -->
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="background-image" style="background-image: url('./Images/Dog_Service.jpg');background-size: 100% 100%;"></div>
+        <div class="carousel-caption d-none d-md-block" style="position: absolute;top: 400px;height: 80px;">
+          <h1>Why Fetch?</h1>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="background-image" style="background-image: url('./Images/So\,resize.jpg');"></div>
+        <div class="carousel-caption d-none d-md-block" style="margin-bottom: 100px;">
+          <h1>Why Fetch?</h1>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="background-image" style="background-image: url('./Images/Dog.jpg');"></div>
+        <div class="carousel-caption d-none d-md-block" style="margin-bottom: 100px;">
+          <h1>Why Fetch?</h1>  
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  
+  <!-- Safety Section -->
+  <section class="container mt-5">
+    <h2 class="text-center" style="color: #f59528;margin: 30px;font-size: 50px;font-family:Georgia, 'Times New Roman', Times, serif">Flexible, Trustworthy, and Reliable Care for Your Pet</h2>
+    <p class="text-center" style="font-size: 20px;">There are so many challenges that come with finding a good, local pet sitter. You need to find someone both you and your pet trust. You need them to be available on the right days at the right times, and maybe even last minute. And of course, you want them to be experienced and great with pets. At Fetch! Pet Care, these are the challenges we solve. Our goal is to make it as easy as possible for you to schedule and receive pet care with the ideal sitter for you and your pet. You can see how we’ve met this goal below.</p>
+    <div class="row justify-content-center mt-5" style="margin-bottom: 60px;">
+        <div class="col-sm-4">
+          <div class="circle c1">
+            <p style="margin: 20px;font-size: 20px">Over</p>
+                <h2 style="color: #f59528;font-weight: 500px;">50,000</h2>
+            <p style="margin-top: 20px;font-size: 20px">Services completed per month</p>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="circle c2">
+            <p style="margin: 20px;font-size: 20px">Over</p>
+                <h2 style="color: rgb(77, 158, 250);font-weight: 500px;">35,000</h2>
+            <p style="margin-top: 20px;font-size: 20px">Background checked employees nationally</p>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="circle c1">
+            <p style="margin:20px;font-size: 20px">More than</p>
+                <h2 style="color: #f59528;font-weight: 500px;">56,000</h2>
+            <p style="margin-top:20px;font-size: 20px">monthly active clients</p>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <!-- Trustworthiness Section -->
+  <div class="container-fluid trust">
+    <h1 style="padding-top: 50px;padding-bottom: 50px; text-align: center;color: white;">Experienced, Animal-loving
+      Pet Sitters</h1>
+    <div class="row">
+         <div class="col-md-6" style="margin-left: 100px;margin-bottom: 30px;">
+            <div class="service-card">
+                <img src="./Images/Img1-6.jpg" class="img-fluid image-service" style="height: 350px;border-radius: 10px;
+                margin-left: 70px;margin-top: 30px;margin-bottom: 30px;">
+                <h3>Our Sitters Are Thoroughly Vetted</h3>
+                <p style="margin: 2px 20px;">We do our due diligence when hiring to make sure every single one of our sitters is not only safe and reliable but that they have a true passion for pets and people.</p>
+                <ul type="dark-circle">
+                  <li>All sitters pass a mandatory background check.</li>
+                  <li>All sitters go through an in-depth interview process.</li>
+                  <li>All sitters are required to provide any essential personal information.</li>
+                  <li>All sitters are required to be bonded and insured.</li>
+                </ul>
+            </div>
+        </div>
+      
+        <div class="col-md-6" style="margin-left: 20px;margin-bottom: 30px;">
+            <div class="service-card">
+                <img src="./Images/Img2-7.jpg" class="img-fluid image-service" style="height: 350px;border-radius: 10px;
+                margin-left: 70px;margin-top: 30px;margin-bottom: 30px;">
+                <h3 >Meet Your Sitter Before You Schedule</h3>
+                <p style="margin: 20px 20px;">We believe that you and your pet should feel as comfortable as possible with your sitter before our scheduled service takes place. That’s why we offer a free in-home consultation before your first service begins. This gives everyone a chance to get to know each other and make sure that this is a good fit.</p>
+            </div>
+        </div>
+      </div>
+    <div class="row">
+         <div class="col-md-6" style="margin-left: 100px;">
+            <div class="service-card">
+                <img src="./Images/Img2-copy.jpg" class="img-fluid image-service" style="height: 350px;border-radius: 10px;
+                margin-left: 70px;margin-top: 30px;margin-bottom: 30px;">
+                <h3 >You’ll Get The Same Trusted Sitter Every Time</h3>
+                <p style="margin: 20px 20px;">When you schedule a service with us, we’ll partner you with a primary and back-up pet sitter based on your needs and schedule. You’ll have the chance to meet these nearby sitters and once you approve of them, we’ll assign them to your account. Any time you schedule services thereafter, you’ll receive care from your primary sitter. If the primary sitter is unavailable, the backup sitter will step in. This way you know your pet is getting care from someone you (and they) know, trust, and like every time.</p>
+            </div>
+        </div>
+      
+        <div class="col-md-6" style="margin-left: 20px;">
+            <div class="service-card">
+                <img src="./Images/Img1-copy.jpg" class="img-fluid image-service" style="height: 350px;border-radius: 10px;
+                margin-left: 70px;margin-top: 30px;margin-bottom: 30px;">
+                <h3>We’ve Earned a Glowing Reputation</h3>
+                <p style="margin: 20px 20px;">With tens of thousands of satisfied clients nationwide, we’ve earned a solid reputation as the most trusted and reliable pet care service in the country. And it isn’t just Fetch as a company. Each of our sitters come with fantastic reviews of their own and our local owners are constantly reviewing feedback surveys to ensure it stays that way.</p>
+            </div>
+        </div>
+      </div>
+    </div>
+  <!-- Experience Section -->
+  <section class="experience-section">
+    <div class="container">
+      <h2 class="text-center" style="color: #f59528;margin: 50px 30px;font-size: 50px;font-family:Georgia, 'Times New Roman', Times, serif">Consistent Availability,
+        Flexible Scheduling</h2>
+      <p class="text-center" style="font-size: 18px;">With locations across the country and thousands of professional sitters who service Fetch clients and pets, we’re always available whenever and wherever you need us -<b>even during those all-important holidays.</b> With our Fetch! Pet Care app, scheduling is easy and can be done on the go.</p>
+    </div>
+  </section>
+  <div class="container grid-section">
+    <div class="row" style="margin-top: 90px;">
+      <h1 style="text-align: center;color: white;padding-top: 20px;">How Fetch Works</h2>
+      <div class="col-md-4">
+        <img src="./Images/3-2.webp" class="img-fluid" alt="Image 1" style="height: 130px;margin: 20px;">
+        <h3>Last-Minute Requests</h3>
+        <p>Find yourself heading out of town unexpectedly? There is no need to stress about finding care for your pet. We’ll have an experienced sitter available and waiting to give your pet all the love and care they need.</p>
+      </div>
+      <div class="col-md-4">
+        <img src="./Images/icon2.webp" class="img-fluid" alt="Image 2" style="height: 130px;margin: 20px;";>
+        <h3>Schedule changes</h3>
+        <p>Want to extend your vacation an extra day or two? That’s no problem with us. Spending another day or two with an adorable animal is what we’re all about.</p>
+      </div>
+      <div class="col-md-4">
+        <img src="./Images/cancellation.webp" class="img-fluid" alt="Image 3" style="height: 130px;margin: 20px;">
+        <h3>Cancellations</h3>
+        <p>Don’t need our services after all? We are flexible in regard to our cancellation policies. Please contact your local franchise in order to make those changes.</p>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <h1 style="padding-top: 30px;margin-left: 400px;color: darkorange;">Get Started With Fetch!</h1>
+    <button class="learn-more-btn" onclick="window.location.href='FindFetch.html'">Find Fetch Near You!</button>
+  </div>
+  <div id="contact" class="container-fluid" style="    background: linear-gradient(135deg, #FFFFFF, #D6E5FF, #B2CEFF, #8CB7FF, #6AA1FF, #5C8DFF, #4C7AFF, #3D66FF, #2F52FF);background-size: cover;">
+    <h1 class="text-center mb-4" style="padding-top: 30px;">Contact Us</h2>
+    <div class="contact-info">
+        <div class="left-info">
+            <h3 style="color: darkorange;">Main Branch:</h3>
+            <p>4-Gopalananad Residency, Behind Parekhs Hospital, Satellite, Ahmedabad</p>
+        </div>
+        <div class="right-info">
+            <p>Email: info@yourpetcare.com</p>
+            <p>Phone: 9429355256</p>
+        </div>
+    </div>
+    <div class="footer-links">
+        <a href="privacy_policy.html">Privacy Policy</a>      
+        <a href="terms_of_use.html">Terms of Use</a>        
+        <a href="blogs.html">Blogs</a>         
+        <a href="https://facebook.com/your_page" target="_blank">Facebook</a> 
+        <a href="https://twitter.com/your_page" target="_blank">Twitter</a> 
+        <a href="https://instagram.com/your_page" target="_blank">Instagram</a>
+    </div>
+    <p style="color: white;text-align: center; padding-top: 15px;padding-bottom: 20px;">2024 Fetch! Pet Care. All Rights Reserved.</p>
+</div>
+
+
+ 
+  <!-- Bootstrap JS -->
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

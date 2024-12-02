@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Pet Services</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel&family=DM+Serif+Display:ital@0;1&family=Handlee&family=Josefin+Sans:ital@0;1&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;;
+    }
+
+    /* Fullscreen background */
+    .background {
+      background-image: url(./Images/Responsible\ Dog\ Ownership\ Day.jpg); /* Add your background image URL here */
+      background-size: 100% 100%;
+      background-position: center;
+      height: 700px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+    }
+    .navbar {
+      transition: all 0.3s ease-in-out; 
+      height: 60px;
+      /* background-color: #007bff;  */
+      background: linear-gradient(135deg, #6DC4FF, #70A9FF, #7D98FF, #8D8DFF, #A085FF, #B27AFF, #C374FF, #D26EFF, #E06AFF);
+
+    }
+
+    .navbar-nav .nav-link {
+      color: whitesmoke !important;
+      font-weight: 400;
+      transition: color 0.3s; /* Transition effect on color change */
+    }
+
+    /* Navbar link hover effect */
+    .navbar-nav .nav-link:hover {
+      color: #ffc107 !important; /* Change color on hover */
+    }
+
+    /* Active link color */
+    .navbar-nav .nav-item.active .nav-link {
+      color: #ffc107 !important;
+    }
+
+
+    /* Container for sections */
+    .sections-container {
+      position: absolute;
+      top: 550px;
+      display: flex;
+      justify-content: space-around;
+      margin-top: 50px;
+      width: 350;
+      margin-left: 100px;
+      background-color: #5bc0de;
+      height: 250px;
+      border-radius: 15px;
+    }
+
+    /* Each section */
+    .section {
+      flex-basis: 30%;
+      cursor: pointer;
+      margin-top: 20px;
+      margin-left: 10px;
+    }
+
+
+    /* Large sections */
+    .large-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin-bottom: 20px; /* Reduce space between sections */
+      height: auto;
+    }
+
+    /* Smooth scrolling */
+    .scroll-link {
+      cursor: pointer;
+    }
+    .background-image-div {
+      background-position: center;
+      width: 100%;
+      height: 600px; /* Adjust height as needed */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      font-weight: 500px;
+      flex-direction: column;
+      font-size: 30px;
+      font-family: 'Gill Sans';
+    }
+    .pet-care-section {
+        padding: 40px 40px;
+    }
+
+    /* Container for content */
+    .content-container {
+      padding:20px;
+      text-align: center;
+      width: 100%;
+    }
+    .grid-section{
+      margin-top: 30px;
+      margin-bottom: 40px;
+      background-color: #56aaf3;
+      color: whitesmoke;
+      font-weight: 400;
+      border-radius: 15px;
+    }
+    .col-md-4{
+      background-color: #56aaf3;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      border-radius: 15px;
+      margin-bottom: 20px;
+    }
+    .col-md-4 h3{
+      font-family: 'Handlee',cursive;
+      font-weight: 400;
+      font-style: normal;
+    }
+    .learn-more-btn {
+            /* background: linear-gradient(to right, #FF8C00, #FF6347); */
+            background-color: orange;
+            color: white;
+            border: 2px solid white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 30px;
+            cursor: pointer;
+            margin-left: 500px;
+            margin-top: 30px;
+            transition: background 0.5s ease;
+}
+
+        .learn-more-btn:hover {
+            background: linear-gradient(to right, #FF6347, #FF8C00);
+        }
+    .content-container2{
+      padding: 20px;
+      justify-content: center;
+      align-items: center;
+      text-align: left;
+      background-color: white;
+      width: 500px;
+      height: 500px;
+      margin-left: 60px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+    }
+    .content-container2 > h1{
+      margin: 30px;color: #56aaf3;
+    }
+    .content-container> p{
+      font-size: 18px; margin-left: 50px;margin-right: 80px;margin-bottom: 20px;
+    }
+    .img-fluid{
+      height: 130px;
+      margin: 20px;
+    }
+    .container-fluid{
+      margin-bottom: 40px;
+      height: 600px;
+    }
+    h2{
+      font-size: 40px;
+      margin: 30px;
+      font-family: 'Gill Sans';
+    }
+    p{
+      font-family: "Poppins", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+    
+    #more-btn {
+            /* background: linear-gradient(to right, #FF8C00, #FF5347); */
+            background-color: rgb(45, 194, 231);
+            color: white;
+            border: 2px solid white;
+            padding: 10px 20px;
+            font-size: 15px;
+            border-radius: 30px;
+            cursor: pointer;
+            margin-left: 525px;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            transition: background 0.5s ease;
+}
+
+        #more-btn:hover {
+            background: linear-gradient(to right, #98eaf5, #0051ff);
+        }
+        .contact-info {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 20px;
+      }
+
+      .left-info, .right-info {
+          width: 45%;
+      }
+  
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="Main.html"><img src="./Images/WhiteLogo.webp" style="height: 40px;width: 100px;"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="Main.html" style="color: whitesmoke;font-weight: 400;">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="FindFetch.html" style="color: whitesmoke;font-weight: 400;">Find Fetch</a>
+                </li>
+                <li class="nav-item dropdown active">
+                    <a class="nav-link dropdown-toggle" href="Services.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: whitesmoke;font-weight: 400;">
+                      Services
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="#">Puppy Sitting</a>
+                      <a class="dropdown-item" href="#">Dog Walking</a>
+                      <a class="dropdown-item" href="#">Pet Sitting</a>
+                      <a class="dropdown-item" href="#">Overnight Care</a>
+                      <a class="dropdown-item" href="#">Emergency Commute</a>
+                      <a class="dropdown-item" href="#">Pet Medical Administration</a>
+                    </div>
+                  </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Why_Fetch.html" style="color: whitesmoke;font-weight: 400;">Why Fetch</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Reviews.html" style="color: whitesmoke;font-weight: 400;">Reviews</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact" style="color: whitesmoke;font-weight: 400;">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<div class="background">
+  <div>
+    <h1 style="margin-top: 300px; font-family:'Gill Sans';font-size:60px">Our Pet Services</h1>
+    <h3 style="font-size: 40px;">Professional Care for your Pets</h3>
+  </div>
+</div>
+
+
+<div class="sections-container">
+  <a href="#puppySitting"><div class="section">
+    <img src="./Images/1-150x150.webp">
+    <br>
+    <p style="margin-left: 25px;font-size: 16px;color: white;">Puppy Sitting</p>
+  </div></a>
+  <a href="#dogWalking"><div class="section">
+    <img src="./Images/2-150x150.webp"><br>
+    <p style="margin-left: 25px;font-size: 16px;color: white;">Dog Walking</p>
+    </div></a>
+  <a href="#petSitting"><div class="section">
+    <img src="./Images/3-150x150.webp"><br>
+    <p style="margin-left: 35px;font-size: 16px;color: white;">Pet Sitting</p>
+    </div></a>
+  <a href="#overnightCare"><div class="section">
+    <img src="./Images/4-150x150.webp"><br>
+    <p style="margin-left: 25px;font-size: 16px;color: white;">Overnight Care</p>
+    </div></a>
+  <a href="#petTaxi"><div class="section">
+    <img src="./Images/5-150x150.webp"><br>
+    <p style="margin-left: 35px;font-size: 16px;color: white;">Pet Taxi</p>
+    </div></a>
+  <a href="#petMedicinalAdministration"><div class="section">
+    <img src="./Images/6-150x150.webp"><br>
+    <p style="margin-left: 25px;font-size: 16px;color: white;">Pet Medical Administration</p>
+    </div></a>
+</div>
+
+<div class="container-fluid pet-care-section">
+  <h2 style="color: darkorange; text-align: center;padding-bottom: 30px;padding-top: 150px;font-size: 40px;">Pet Care Services</h2>
+  <p style="font-size: 18px;">At Fetch, we serve pets of every type, age, and phase of life because we truly love animals. We show it with every belly rub, long walk, scratch behind the ear, and treat we give. We’d love to be your trusted sidekick for a healthy and happy pet because we know we can deliver trusted, quality care and a professional, stress-free experience for you.</p>
+  <button class="learn-more-btn" onclick="window.location.href='Why_Fetch.html'">Learn More</button>
+</div>
+</div>
+</div>
+
+
+<div id="puppySitting" class="large-section" >
+  <div class="background-image-div" style="background-image: url(./Images/PetsHumans.jpg);background-size: 100% 100%;">
+    <h1 style="margin-bottom: 0;">Puppy Sitting Services</h2>
+    <p style="margin-top: 0;">Helping your pup become the goodest of dogs.</p>
+  </div>
+  <div class="content-container">
+    <h2 style="color: #f56954;">Consistent Puppy-Sitting Services</h2>
+    <p >If you want to help your puppy learn and grow just as fast as they can, you’re going to need to give them lots of attention and a
+       consistent routine. While work and other responsibilities can be a struggle to balance, we are here to make sure the “consistent” 
+       part of in-home puppy care happens. Our local puppy sitters can assist you in creating a customized feeding, exercise, and potty schedule
+        that makes sense for both you and your dog.</p>
+    <p>Not looking to leave your furry friend at home all day? We have the perfect solution! Our reliable puppy-sitting services from Fetch!
+       Pet Care can come to your home and provide full-service, in-home puppy care — everything from walks to meals and more. Whether you are
+      away for one day or a few, you can trust your pup will be in the best care with our professional sitters. Connect with a local pet sitter in your area today!</p>    
+  </div>
+  <!-- Three divs in one row using Bootstrap grid -->
+  <div class="container grid-section">
+    <h2 style="text-align: center;margin: 30px 0;">How Fetch Puppy Sitting Works</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <img src="./Images/Match.webp" class="img-fluid" alt="Image 1" style="height: 130px">
+        <h3>Match</h3>
+        <p>We match you with an experienced, nearby sitter based on your dog’s breed, your schedule, and your specific needs.</p>
+      </div>
+      <div class="col-md-4">
+        <img src="./Images/5-2.webp" class="img-fluid" alt="Image 2" style="height: 130px">
+        <h3>Meet</h3>
+        <p>You meet with the puppy sitter virtually or in-person (your choice) to decide if they are right for you.</p>
+      </div>
+      <div class="col-md-4">
+        <img src="./Images/6-2.webp" class="img-fluid" alt="Image 3" style="height: 130px">
+        <h3>Grow</h3>
+        <p>Sit back as your puppy learns and grows with each puppy visit!</p>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="container-fluid" style="background-image: url(./Images/Husky\ Dog.jpg);background-size: 100% 100%; height: 700px;">
+  <div class="content-container2" style="position: absolute;top: 2950px;height: 550px;">
+    <h1 style="margin: 30px;color: #56aaf3;">Benefits of In-Home Puppy-Sitting Services</h2>
+   <ul type="dark-circle">
+    <li>Develop a routine feeding and potty schedule</li>
+    <li>Daily exercise to burn off energy</li>
+    <li>Lots of social interaction and attention with each puppy visit</li>
+    <li>Peace of mind knowing your pup is safe at home</li>
+    <li>Catering to any special needs of your pup, such as minor medical care or keeping an eye on post-surgery recovery</li>
+    <li>24/7 customer support so you can get help anytime you need it</li>
+   </ul>
+   <button class="learn-more-btn" onclick="window.location.href='FindFetch.html'" style="margin-left: 100px;">Find A Puppy Sitter Near You!</button>
+  </div>
+
+</div>
+<div id="dogWalking" class="large-section" style="background-color: #f8f9fa;">
+  <div class="background-image-div" style="background-image: url(./Images/Discover\ _\ Adobe\ Creative\ Cloud.jpg);">
+    <h1 style="margin-bottom: 0;">Dog Walking Service</h2>
+    <p style="margin-top: 0;">Local, experienced dog walkers you can trust.</p>
+  </div>
+  <div class="content-container">
+    <h2 style="color: #f56954;">Finding a Nearby Dog Walker Has Never Been So Easy</h2>
+    <p style="font-size: 20px; margin-left: 20px;margin-right: 20px;">Your dog needs daily exercise, but fitting a couple of thirty-minute walks into your daily schedule isn’t
+       always easy. For the times when life is a little too chaotic to head home on your lunch break or walk around the neighborhood between work and dinner, we can help. We’ll make sure your dog gets to take their daily stroll so they can bark at all the local squirrels, smell all of the bushes, and, yes, even visit all the hydrants. We’ll even take photos along the way so you never miss a moment.</p>
+    <p style="font-size: 20px; margin-left: 20px;margin-right: 20px;">Whether your pup has lots of energy and needs a long, leisurely stroll or needs a quick walk around the neighborhood for a bathroom break, we’ve got you covered. Our team of Fetch! Pet Care local dog walkers are here to ensure your pup gets the attention they need during their daily strolls. What’s more, all of our dog walkers are insured and bonded so you can rest easy knowing your pup is in good hands.</p>    
+  </div>
+  <!-- Three divs in one row using Bootstrap grid -->
+  <div class="container grid-section">
+    <h2 style="text-align: center;margin: 10px 0;">How Fetch Dog Walking Works</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <img src="./Images/Match.webp" class="img-fluid" alt="Image 1" style="height: 130px">
+        <h3>Match</h3>
+        <p>We match you with an experienced, nearby sitter based on your dog’s breed, your schedule, and your specific needs.</p>
+      </div>
+      <div class="col-md-4">
+        <img src="./Images/5-2.webp" class="img-fluid" alt="Image 2" style="height: 130px">
+        <h3>Meet</h3>
+        <p>You meet with the puppy sitter virtually or in-person (your choice) to decide if they are right for you.</p>
+      </div>
+      <div class="col-md-4">
+       <img src="./Images/6-2.webp" class="img-fluid" alt="Image 3" style="height: 130px">
+        <h3>Relax</h3>
+        <p>Relax as you receive photo and video updates of your dog enjoying a fun-filled walk.</p>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="container-fluid" style="background-image: url(./Images/dog-walking-at-park.png);height: 600px; background-size: 100% 100%;">
+  <div class="content-container2" style="height: 450px; position: absolute;top: 5220px;height: 475px;">
+    <h1 style="margin: 30px;color: #56aaf3;">Dog Walking Options</h2>
+    <p>You can schedule each of our options as one-time or recurring walks. For elderly dogs or dogs with limiting medical conditions, walks can be scheduled for less than 30 minutes.</p>
+   <ul type="dark-circle">
+    <li>30 Min Walk</li>
+    <li>45 Min Walk</li>
+    <li>60 Min Walk</li>
+    </ul>
+    <p>Our dog walkers are available year-round to provide your pup with walks during those busy times.</p>
+    <button class="learn-more-btn" onclick="window.location.href='FindFetch.html'" style="margin-left: 100px;">Find A Dog Walker Near You!</button>
+  </div>
+</div>
+<div id="petSitting" class="large-section" style="background-color: #f8f9fa;">
+  <div class="background-image-div" style="background-image: url(./Images/Introducing-a-cat-or-kitten-to-your-dog.png);background-size: 100% 100%">
+    <h1 style="margin-bottom: 0;">Pet Sitting Service</h2>
+    <p style="margin-top: 0;">In-home pet sitting for dogs, cats, birds, gerbils, and more!</p>
+  </div>
+  <div class="content-container" style="height: 500px;">
+    <h2 style="color: #f56954;">In-Home Pet-Sitting Services with the Check-ins You Need</h2>
+    <p style="font-size: 17px; margin-left: 20px;margin-right: 20px;">Need someone to check in on your pet(s) while you’re away? We can have an animal-loving pet sitter stop by to give your pet food, water, and all the attention and love it needs. To ensure you can enjoy your time away to the fullest, we provide daily updates including photos/videos, accommodate schedule changes, and can accommodate last-minute requests.</p>
+    <p style="font-size: 17px; margin-left: 20px;margin-right: 20px;">Fetch! Pet Care offers professional pet-sitting services that are tailored to your pets’ individual needs. Our certified and insured pet sitters are experienced professionals and can provide the quality care that your pets deserve. From playtime to potty breaks, food to cuddles, we make sure that your pet receives the attention and love that it needs. We also offer additional services such as administering medications, mail retrieval, and home safety.</p>    
+    <p style="font-size: 17px; margin-left: 20px;margin-right: 20px;">Find the right pet sitter for you and your furry friend.  With our network of thousands of pet sitters, we have a solution for every situation. Our experienced team will help match you with a pet sitter that is just right for your pet and can provide quality care in the comfort of their home. Get started today!</p>    
+  </div>
+  <!-- Three divs in one row using Bootstrap grid -->
+  <div class="container grid-section">
+    <h2 style="text-align: center;margin: 10px 0;">How Fetch Pet Sitting Works</h2>
+    <div class="row" >
+      <div class="col-md-4" >
+        <img src="./Images/Match.webp" class="img-fluid" alt="Image 1" style="height: 130px">
+        <h3>Match</h3>
+        <p>We match you with an experienced, nearby sitter based on your dog’s breed, your schedule, and your specific needs.</p>
+      </div>
+      <div class="col-md-4">
+        <img src="./Images/5-2.webp" class="img-fluid" alt="Image 2" style="height: 130px">
+        <h3>Meet</h3>
+        <p>You meet with the puppy sitter virtually or in-person (your choice) to decide if they are right for you.</p>
+      </div>
+      <div class="col-md-4">
+       <img src="./Images/6-2.webp" class="img-fluid" alt="Image 3" style="height: 130px">
+        <h3>Relax</h3>
+        <p>Relax as you receive written, photo, and video updates on your pet’s care.</p>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="container-fluid" style="background-image: url(./Images/Watson\,\ Kiko\ And\ Harry.jpg);background-size: 100% 100%;">
+  <div class="content-container2" style="position: absolute;top: 7400px;">
+    <h1 >Pet Sitting Options</h2>
+      <p>Our Pet Sitting service typically includes one of our nearby pet sitters stopping by once or multiple times a day to take care of any of your pet’s needs. Along with food and water, this could include a game of fetch with your dog, trying to catch the laser pointer with your cat, or a trip in the hamster ball for your hamster.</p>
+     <ul type="dark-circle">
+      <li>30 Min </li>
+      <li>45 Min </li>
+      <li>60 Min </li>
+      <li>Extend sitting </li>
+      </ul>
+      <button class="learn-more-btn" onclick="window.location.href='Why_Fetch.html'" style="margin-left: 100px;">Find A Pet Sitter Near You!</button>
+  </div>
+</div>
+<div id="overnightCare" class="large-section" style="background-color: #f8f9fa">
+  <div class="background-image-div" style="background-image: url(./Images/The\ Right\ Way\ to\ Bond\ With\ Your\ Dog.jpg);background-size: 80% 100%;">
+    <h1 style="margin-bottom: 0;">Overnight Pet Care</h2>
+    <p style="margin-top: 0;">Pet Care for your pet and home.</p>
+  </div>
+  <div class="content-container">
+    <h2 style="color: #f56954;">The Overnight Pet Care You Need
+      Delivered Right to Your Door</h2>
+    <p style="font-size: 17px; margin-left: 20px;margin-right: 20px;">We all hate leaving our pets behind when heading out of town, but one way to make sure they’re as comfortable as possible is to provide them care in their familiar environment. With Fetch! in-home overnight pet care, we’ll have one of our highly-trained and background-checked sitters stay the night to take care of your pet’s food, water, bathroom, and exercise needs.</p>
+    <p style="font-size: 17px; margin-left: 20px;margin-right: 20px;">With our “almost” overnight pet care, the sitter stops by your home later in the evening to make sure your pet has everything they need for a night at home alone. Then, the sitter will stop by again in the morning to tend to your pet’s needs. Your pet will be happy to stay in their comfortable, familiar home, and you can relax knowing they are taken care of.</p>    
+  </div>
+  <!-- Three divs in one row using Bootstrap grid -->
+  <div class="container grid-section">
+    <h2 style="text-align: center;margin: 10px 0;">How Fetch Overnight Pet Care Works</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <img src="./Images/Match.webp" class="img-fluid" alt="Image 1" style="height: 130px">
+        <h3>Match</h3>
+        <p>We match you with an experienced, nearby sitter based on your dog’s breed, your schedule, and your specific needs.</p>
+      </div>
+      <div class="col-md-4">
+        <img src="./Images/5-2.webp" class="img-fluid" alt="Image 2" style="height: 130px">
+        <h3>Meet</h3>
+        <p>You meet with the puppy sitter virtually or in-person (your choice) to decide if they are right for you.</p>
+      </div>
+      <div class="col-md-4">
+        <img src="./Images/6-2.webp" class="img-fluid" alt="Image 3" style="height: 130px">
+         <h3>Relax</h3>
+         <p>Relax as you receive written, photo, and video updates on your pet’s care.</p>
+       </div>
+    </div>
+  </div>
+  </div>
+  <div class="container-fluid" style="background-image: url(./Images/puppy-playing.jpg); background-size: 100%;height: 700px;">
+  <div class="content-container2" style="position: absolute;top: 9450px;height: 600px;">
+    <h1>We Take the Security of Your Home Seriously</h2>
+    <p style="text-align: center;margin-left: 30px;margin-right: 30px;">We know that after the health, safety, and happiness of your pet, the security of your home is a big priority. Here is how we ensure your home’s security while you’re away:</p>
+   <ul type="dark-circle">
+    <li>The only people who have access to your key or access code are your location’s main office and your sitter.</li>
+    <li>We track all key movements, meaning if your sitter needs a key they are required to put a request in our Fetch! app.</li>
+    <li>If your home has an access code, it will only be available to your sitter during scheduled service hours.      </li>
+   </ul>
+   <button class="learn-more-btn" onclick="window.location.href='FindFetch.html'" style="margin-left: 50px;">Schedule An Overnight Care Near You!</button>
+  </div>
+</div>
+<div id="petTaxi" class="large-section" style="background-color: #f8f9fa;">
+  <div class="background-image-div" style="background-image: url(./Images/The\ Real\ Reason\ Why\ Dogs\ Stick\ Their\ Heads\ Out\ of\ Car\ Windows.jpg);background-size: 100% 100%;" >
+    <h1 style="margin-bottom: 0;">Pet Taxi Services</h2>
+    <p style="margin-top: 0;">Easy transsport to the vet, groomaers and more</p>
+  </div>
+  <div class="content-container">
+    <h2 style="color: #f56954;">Personal Pet Taxi Services for Your Pet</h2>
+    <p style="font-size: 17px; margin-left: 20px;margin-right: 20px;">You can’t always step away from your daily responsibilities to take your pet to the groomer or vet. And now, you don’t have to. With our pet taxi service, a qualified pet sitter will pick up your pet and bring them wherever they need to go. We’ll send lots of updates accompanied with photos so that you can see exactly how your pet is doing on their little “solo” trip. Your pet will get the care they need and you’ll be able to fully focus on your other responsibilities.</p>
+    <p style="font-size: 17px; margin-left: 20px;margin-right: 20px;">Fetch! Pet Care is the leading pet sitting and dog walking service in the U.S. Our pet taxi service is designed to make pet transportation as stress-free as possible. We provide reliable, safe, and convenient transportation for your pet(s) to the vet, groomer, doggy day care, airport, or wherever they need to be. Our pet taxi specialists are experienced pet care professionals that will go above and beyond to provide your pet with a comfortable travel experience. We understand how important your pet's safety and comfort are so that you have peace of mind during their journey. Contact us today to schedule a pet taxi service and take the worry and hassle out of pet transport.</p>    
+  </div>
+  <!-- Three divs in one row using Bootstrap grid -->
+  <div class="container grid-section">
+    <h2 style="text-align: center;margin: 10px 0;">How Fetch Pet Taxi Works</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <img src="./Images/Match.webp" class="img-fluid" alt="Image 1" style="height: 130px">
+        <h3>Match</h3>
+        <p>We match you with an experienced, nearby sitter based on your dog’s breed, your schedule, and your specific needs.</p>
+      </div>
+      <div class="col-md-4">
+        <img src="./Images/5-2.webp" class="img-fluid" alt="Image 2" style="height: 130px">
+        <h3>Meet</h3>
+        <p>You meet with the puppy sitter virtually or in-person (your choice) to decide if they are right for you.</p>
+      </div>
+      <div class="col-md-4">
+       <img src="./Images/6-2.webp" class="img-fluid" alt="Image 3" style="height: 130px">
+        <h3>Schedule</h3>
+        <p>When your pet needs a ride, you simply schedule the time and your chosen sitter will bring them to their appointment.          </p>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="container-fluid" style="background-image: url(./Images/side-profile-too-cute-handle.webp);background-size: 100% 100%;height: 600px;">
+  <div class="content-container2" style="position: absolute;top: 11700px;">
+    <h1>Pet Taxi Capabilities</h2>
+   <ul type="dark-circle">
+    <li>Pets’ locations are tracked via GPS through our My Fetch! application.</li>
+    <li>We can take care of any needed potty breaks before and following transport.</li>
+    <li>Size and weight restrictions typically do not apply but may be present at some Fetch! locations. Be sure to ask your specific Fetch! location for details.</li>
+    <li>Time and distance restrictions vary by location, so please be sure to ask your specific Fetch! location if you have questions or concerns regarding this information.</li>
+   </ul>
+   <button class="learn-more-btn" onclick="window.location.href='Why_Fetch.html'" style="margin-left: 100px;">Find A Pet Taxi Near You!</button>
+  </div>
+</div>
+<div id="petMedicinalAdministration" class="large-section" style="background-color: #f8f9fa">
+  <div class="background-image-div" style="background-image: url(./Images/istockphoto-1357774532-612x612.jpg);background-size: 100% 100%;">
+    <h1 style="margin-bottom: 0;">Pet Medical Administration</h2>
+    <p style="margin-top: 0;">Keeping yor pet as healthy and happy as possible.</p>
+  </div>
+  <div class="content-container">
+    <h2 style="color: #f56954;">Care that Goes Beyond Medical Administration</h2>
+    <p style="font-size: 17px; margin-left: 20px;margin-right: 20px;">Receiving medicine can be an undesirable and sometimes scary experience for a pet. But we can make it a little easier. Our medical administrators are experienced in more than just giving medicine. They take care to make sure your pet feels comfortable and safe throughout the experience. So whether your pet has been recently neutered, diagnosed with an illness, or just needs its monthly heartworm medication, leave it to us to get them their prescribed medication as scheduled.</p>
+    <p style="font-size: 17px; margin-left: 20px;margin-right: 20px;">Along with our medical administration services, we offer numerous other pet care services, including daily walks, pet transportation, pet sitting, and overnight stays. Our team of trained professionals will ensure that all of your pet’s needs are taken care of and provide the best care and comfort for your pet.</p>    
+  </div>
+  <!-- Three divs in one row using Bootstrap grid -->
+  <div class="container grid-section">
+    <h2 style="text-align: center;margin: 10px 0;">How Fetch Medical Administration Works</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <img src="./Images/Match.webp" class="img-fluid" alt="Image 1" style="height: 130px">
+        <h3>Choose</h3>
+        <p>You choose one of our services and let us know that medical administration will be required during the service.</p>
+      </div>
+      <div class="col-md-4">
+        <img src="./Images/Match.webp" class="img-fluid" alt="Image 1" style="height: 130px">
+        <h3>Match</h3>
+        <p>We match you with an experienced, nearby sitter based on your dog’s breed, your schedule, and your specific needs.</p>
+      </div>
+      <div class="col-md-4">
+        <img src="./Images/5-2.webp" class="img-fluid" alt="Image 2" style="height: 130px">
+        <h3>Meet</h3>
+        <p>You meet with the puppy sitter virtually or in-person (your choice) to decide if they are right for you.</p>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="container-fluid" style="background-image: url(./Images/ASHH5bDmsp6wnK6mEfZdcU.jpg);background-size: 100% 100%;">
+  <div class="content-container2" style="position: absolute;top: 13800px; height: 500px;width: 400px;">
+    <h1>We Have Experience Administering</h2>
+   <ul type="dark-circle">
+    <li>Pills</li>
+    <li>Injection</li>
+    <li>Shots</li>
+    <li>Fluids</li>
+   </ul>
+   <button class="learn-more-btn" onclick="window.location.href='FindFetch.html'" style="margin-left: 40px;">Schedule Medical Administration</button>
+  </div>
+</div>
+<div class="container-fluid" style="background-color: white;height: 150px;">
+  <h1 style="padding-top: 30px;margin-left: 400px;color: darkorange;">Get Started With Fetch!</h1>
+  <button class="learn-more-btn" onclick="window.location.href='FindFetch.html'" id="more-btn">Find Fetch Near You!</button>
+</div>
+<div id="contact" class="container-fluid" style="    background: linear-gradient(135deg, #FFFFFF, #D6E5FF, #B2CEFF, #8CB7FF, #6AA1FF, #5C8DFF, #4C7AFF, #3D66FF, #2F52FF);background-size: cover;height: 400px;">
+  <h1 class="text-center mb-4" style="padding-top: 30px;">Contact Us</h2>
+  <div class="contact-info">
+      <div class="left-info">
+          <h3 style="color: darkorange;">Main Branch:</h3>
+          <p> 4- Gopalanad Residency, Behind Parekhs Hospital, Satellite, Ahmedabad</p>
+      </div>
+      <div class="right-info">
+          <p>Email: info@yourpetcare.com</p>
+          <p>Phone: 9429355256</p>
+      </div>
+  </div>
+  <div class="footer-links">
+      <a href="privacy_policy.html">Privacy Policy</a>      
+      <a href="terms_of_use.html">Terms of Use</a>        
+      <a href="blogs.html">Blogs</a>         
+      <a href="https://facebook.com/your_page" target="_blank">Facebook</a> 
+      <a href="https://twitter.com/your_page" target="_blank">Twitter</a> 
+      <a href="https://instagram.com/your_page" target="_blank">Instagram</a>
+  </div>
+  <p style="color: darkorange;text-align: center; padding-top: 15px;padding-bottom: 20px;">2024 Fetch! Pet Care. All Rights Reserved.</p>
+</div>
+
+</body>
+</html>

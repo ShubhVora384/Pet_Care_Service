@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora&display=swap">
+    <style>
+        .navbar {
+      transition: all 0.3s ease-in-out; /* Add transition for smooth animation */
+      /* background-color: #007bff;  */
+      background: linear-gradient(135deg, #6DC4FF, #70A9FF, #7D98FF, #8D8DFF, #A085FF, #B27AFF, #C374FF, #D26EFF, #E06AFF);
+
+    }
+
+    .collapsed .navbar-nav {
+      display: flex !important; /* Override Bootstrap collapsing behavior */
+    }
+
+    .navbar-brand {
+      font-size: 24px; /* Adjust brand font size */
+      transition: all 0.3s ease-in-out; /* Add transition for smooth animation */
+    }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Your Pet Care</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="Main.html" style="color: whitesmoke;font-weight: 400;">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="FindFetch.html" style="color: whitesmoke;font-weight: 400;">Find Fetch</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="Services.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: whitesmoke;font-weight: 400;">
+                          Services
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="#">Puppy Sitting</a>
+                          <a class="dropdown-item" href="#">Dog Walking</a>
+                          <a class="dropdown-item" href="#">Pet Sitting</a>
+                          <a class="dropdown-item" href="#">Overnight Care</a>
+                          <a class="dropdown-item" href="#">Emergency Commute</a>
+                          <a class="dropdown-item" href="#">Pet Medical Administration</a>
+                        </div>
+                      </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Why_Fetch.html" style="color: whitesmoke;font-weight: 400;">Why Fetch</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Reviews.html" style="color: whitesmoke;font-weight: 400;">Reviews</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact" style="color: whitesmoke;font-weight: 400;">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script>
+        let lastScrollTop = 0;
+      
+        window.addEventListener("scroll", function() {
+          let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+          
+          if (currentScroll > lastScrollTop) {
+            // Scroll down
+            document.querySelector('.navbar').style.height = '50px';
+            document.querySelector('.navbar-brand').style.fontSize = '20px';
+          } else {
+            // Scroll up
+            document.querySelector('.navbar').style.height = '100px';
+            document.querySelector('.navbar-brand').style.fontSize = '24px';
+          }
+          
+          lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+        }, false);
+      </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+</body>
+</html>

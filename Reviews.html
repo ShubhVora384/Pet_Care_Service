@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Carousel Example</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel&family=DM+Serif+Display:ital@0;1&family=Handlee&family=Josefin+Sans:ital@0;1&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .background {
+      background-image: url(./Images/Mans-Bestfriend.jpg); /* Add your background image URL here */
+      background-size: 100% 100%;
+      background-position: center;
+      height: 650px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+    }
+    .navbar {
+      transition: all 0.3s ease-in-out; 
+      height: 60px;
+      /* background-color: #007bff;  */
+      background: linear-gradient(135deg, #6DC4FF, #70A9FF, #7D98FF, #8D8DFF, #A085FF, #B27AFF, #C374FF, #D26EFF, #E06AFF);
+
+    }
+
+    .navbar-nav .nav-link {
+      color: whitesmoke !important;
+      font-weight: 400;
+      transition: color 0.3s; /* Transition effect on color change */
+    }
+
+    /* Navbar link hover effect */
+    .navbar-nav .nav-link:hover {
+      color: #ffc107 !important; /* Change color on hover */
+    }
+
+    /* Active link color */
+    .navbar-nav .nav-item.active .nav-link {
+      color: #ffc107 !important;
+    }
+
+    .carousel-item {
+      text-align: center;
+      height: 600px; /* Adjust height as needed */
+      background-color: white;
+    }
+    .content-container {
+      padding:20px;
+      text-align: center;
+      width: 100%;
+    }
+    
+    .carousel-body {
+      background: rgb(80, 163, 241); /* Semi-transparent black background */
+      color: #fff;
+      height: 550px;
+      margin-top: 30px;
+      margin-bottom: 25px;
+    }
+    .col-md-4{
+        margin: 30px;
+        width: 300px;
+        border: 1px solid black;
+    }
+    .inner-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      width: 280px;
+    }
+    .avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+      border: 2px solid white;
+    }
+    .col-md-4 p{
+      padding-top: 10px;
+      height: 300px;
+    }
+    .name{
+      margin-left: 10px;
+    }
+    
+
+.carousel-indicators {
+  position: absolute; /* Set the background color of the active indicator */
+  bottom: 20px;
+}
+.learn-more-btn {
+            /* background: linear-gradient(to right, #FF8C00, #FF6347); */
+            background-color: rgb(45, 194, 231);
+            color: white;
+            border: 2px solid white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 30px;
+            cursor: pointer;
+            margin-left: 525px;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            transition: background 0.5s ease;
+}
+
+        .learn-more-btn:hover {
+            background: linear-gradient(to right, #98eaf5, #0051ff);
+        }
+        p{
+          font-family: "Poppins", sans-serif;
+          font-weight: 400;
+          font-style: normal;
+        }
+        .contact-info {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 20px;
+      }
+
+      .left-info, .right-info {
+          width: 45%;
+      }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="Main.html"><img src="./Images/WhiteLogo.webp" style="height: 40px;width: 100px;"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="Main.html" style="color: whitesmoke;font-weight: 400;">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="FindFetch.html" style="color: whitesmoke;font-weight: 400;">Find Fetch</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="Services.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: whitesmoke;font-weight: 400;">
+                      Services
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="#">Puppy Sitting</a>
+                      <a class="dropdown-item" href="#">Dog Walking</a>
+                      <a class="dropdown-item" href="#">Pet Sitting</a>
+                      <a class="dropdown-item" href="#">Overnight Care</a>
+                      <a class="dropdown-item" href="#">Emergency Commute</a>
+                      <a class="dropdown-item" href="#">Pet Medical Administration</a>
+                    </div>
+                  </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Why_Fetch.html" style="color: whitesmoke;font-weight: 400;">Why Fetch</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="Reviews.html" style="color: whitesmoke;font-weight: 400;">Reviews</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact" style="color: whitesmoke;font-weight: 400;">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<div class="background">
+    <div>
+      <h1 style="margin-top: 300px; font-family:'Gill Sans';font-size:60px">Reviews</h1>
+      <h3 style="font-size: 40px;">Real Feedback From Real Pet Owners</h3>
+    </div>
+</div>
+<div class="content-container">
+  <h2 style="color: #f56954;">Consistent Puppy-Sitting Services</h2>
+  <p>If you want to help your puppy learn and grow just as fast as they can, you’re going to need to give them lots of attention and a consistent routine. While work and other responsibilities can be a struggle to balance, we are here to make sure the “consistent” part of in-home puppy care happens. Our local puppy sitters can assist you in creating a customized feeding, exercise, and potty schedule that makes sense for both you and your dog.</p>
+  <p>Not looking to leave your furry friend at home all day? We have the perfect solution! Our reliable puppy-sitting services from Fetch! Pet Care can come to your home and provide full-service, in-home puppy care — everything from walks to meals and more. Whether you are away for one day or a few, you can trust your pup will be in the best care with our professional sitters. Connect with a local pet sitter in your area today!</p>    
+</div>
+
+<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="carousel-body">
+        <div class="container" style="margin: 40px;">
+          <div class="row">
+            <div class="col-md-4" style="margin-left: 90px;">
+              <div class="inner-row" style="border-bottom: 1px solid black;">
+                <img src="./Images/Profile.jpg" alt="Avatar" class="avatar" style="margin-right: 0px;margin-top: 10px;">
+                <div class="name">Rajesh Kumar<br><div class="rating" style="color: yellow;">&#9733; &#9733; &#9733; &#9733; &#9733;</div></div>
+                <div class="quote-icon" style="margin-left: 70px;font-size: 30px;">&#8220;</div>
+                <hr>
+              </div>
+              <p>Absolutely fantastic service! I was hesitant at first, but Fetch! Pet Care exceeded all my expectations. My dog, Max, loves his sitter, and I feel so relieved knowing he's in good hands.</p>
+            </div>
+            <div class="col-md-4" >
+              <div class="inner-row" style="border-bottom: 1px solid black;">
+                <img src="./Images/Profile.jpg" alt="Avatar" class="avatar" style="margin-right: 0px;margin-top: 10px;">
+                <div>Priya Patel<br><div class="rating" style="color: yellow; padding-left: 15px;">&#9733; &#9733; &#9733; &#9733; &#9733;</div></div>
+                <div class="quote-icon" style="margin-left: 70px;font-size: 30px;">&#8220;</div>
+                <hr>
+              </div>
+              <p>I've tried several pet care services before, but Fetch! stands out. The attention to detail and genuine care for my pets are unmatched. Highly recommended!</p>
+            </div>
+            <div class="col-md-4" >
+              <div class="inner-row" style="border-bottom: 1px solid black;">
+                <img src="./Images/Profile.jpg" alt="Avatar" class="avatar" style="margin-right: 0px;margin-top: 10px;">
+                <div>Amit Singh<br><div class="rating" style="color: yellow; padding-left: 15px;">&#9733; &#9733; &#9733; &#9733; &#9733;</div></div>
+                <div class="quote-icon" style="margin-left: 70px;font-size: 30px;">&#8220;</div>
+                
+              </div>
+              <p>I can't thank Fetch! Pet Care enough for their outstanding service. Their sitters are professional, reliable, and truly love animals. It's a relief to have such trustworthy care for my pets while I'm away.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="carousel-body">
+    <div class="container" style="margin: 40px;">
+      <div class="row">
+        <div class="col-md-4" style="margin-left: 90px;">
+          <div class="inner-row" style="border-bottom: 1px solid black;">
+            <img src="./Images/Profile.jpg" alt="Avatar" class="avatar" style="margin-right: 0px;margin-top: 10px;">
+            <div class="name">Sneha Desai<br><div class="rating" style="color: yellow;">&#9733; &#9733; &#9733; &#9733; &#9733;</div></div>
+            <div class="quote-icon" style="margin-left: 70px;font-size: 30px;">&#8220;</div>
+            <hr>
+          </div>
+          <p>As an Indian, I'm very particular about who I trust with my pets. Fetch exceeded all my expectations! They not only provided top-notch care for my cat, Luna, but also incorporated some traditional Indian methods for grooming and relaxation, which was a pleasant surprise. Highly recommend!</p>
+        </div>
+        <div class="col-md-4" >
+          <div class="inner-row" style="border-bottom: 1px solid black;">
+            <img src="./Images/Profile.jpg" alt="Avatar" class="avatar" style="margin-right: 0px;margin-top: 10px;">
+            <div class="name">Vikram Sharma<br><div class="rating" style="color: yellow;">&#9733; &#9733; &#9733; &#9733; &#9733;</div></div>
+            <div class="quote-icon" style="margin-left: 70px;font-size: 30px;">&#8220;</div>
+            <hr>
+          </div>
+          <p>Being away from home for work can be tough, especially when you have a pet waiting for you. Fetch truly came to the rescue! Their seamless service, coupled with the personalized updates they provided about my Golden Retriever, Simba, made me feel at ease. It's evident that they genuinely care for pets, just like we do in our Indian households.</p>
+        </div>
+        <div class="col-md-4" >
+          <div class="inner-row" style="border-bottom: 1px solid black;">
+            <img src="./Images/Profile.jpg" alt="Avatar" class="avatar" style="margin-right: 0px;margin-top: 10px;">
+            <div>Anjali Reddy<br><div class="rating" style="color: yellow; padding-left: 15px;">&#9733; &#9733; &#9733; &#9733; &#9733;</div></div>
+            <div class="quote-icon" style="margin-left: 70px;font-size: 30px;">&#8220;</div>
+            
+          </div>
+          <p>Fetch has been a lifesaver for me and my busy schedule. Their attention to detail and the way they tailored their services to meet the specific needs of my elderly dog, Coco, was remarkable. What's even better is their affordable pricing, making it accessible for everyone. Thank you, Fetch, for being there when I needed you</p>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- Add more carousel items here -->
+  </div>
+  <div class="carousel-item">
+      <div class="carousel-body">
+    <div class="container" style="margin: 40px;">
+      <div class="row">
+        <div class="col-md-4" style="margin-left: 90px;">
+          <div class="inner-row" style="border-bottom: 1px solid black;">
+            <img src="./Images/Profile.jpg" alt="Avatar" class="avatar" style="margin-right: 0px;margin-top: 10px;">
+            <div>Sanjay Gupta<br><div class="rating" style="color: yellow; padding-left: 15px;">&#9733; &#9733; &#9733; &#9733; &#9733;</div></div>
+            <div class="quote-icon" style="margin-left: 70px;font-size: 30px;">&#8220;</div>
+            <hr>
+          </div>
+          <p>As an Indian pet owner, finding a reliable and culturally-sensitive pet care service was important to me. Fetch not only met but exceeded my expectations. Their attention to detail, from dietary preferences to grooming techniques, truly reflects an understanding of Indian pet culture. I'm grateful to have found such a trustworthy service for my beloved fur baby, Pepper.</p>
+        </div>
+        <div class="col-md-4" >
+          <div class="inner-row" style="border-bottom: 1px solid black;">
+            <img src="./Images/Profile.jpg" alt="Avatar" class="avatar" style="margin-right: 0px;margin-top: 10px;">
+            <div>Kiran Malhotra<br><div class="rating" style="color: yellow; padding-left: 15px;">&#9733; &#9733; &#9733; &#9733; &#9733;</div></div>
+            <div class="quote-icon" style="margin-left: 70px;font-size: 30px;">&#8220;</div>
+            <hr>
+          </div>
+          <p>Fetch is a game-changer in the pet care industry. Their commitment to excellence and passion for animals are truly commendable. I appreciate how they integrate elements of Indian pet care traditions, such as Ayurvedic grooming, into their services. My experience with Fetch has been nothing short of exceptional, and I wholeheartedly recommend them to all pet owners.</p>
+        </div>
+        <div class="col-md-4" >
+          <div class="inner-row" style="border-bottom: 1px solid black;">
+            <img src="./Images/Profile.jpg" alt="Avatar" class="avatar" style="margin-right: 0px;margin-top: 10px;">
+            <div>Deepak Mehta<br><div class="rating" style="color: yellow; padding-left: 15px;">&#9733; &#9733; &#9733; &#9733; &#9733;</div></div>
+            <div class="quote-icon" style="margin-left: 70px;font-size: 30px;">&#8220;</div>
+            
+          </div>
+          <p>"I couldn't be happier with the service provided by Fetch. From the moment I reached out to them, I knew my furry friend, Whiskers, would be in good hands. Their team goes above and beyond to ensure the well-being and happiness of pets. As an Indian pet owner, I deeply appreciate their cultural sensitivity and personalized approach. Fetch has earned my trust, and I wouldn't hesitate to entrust them with Whiskers again.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  
+  <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+  <ol class="carousel-indicators">
+    <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+    <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+    <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+    <!-- Add more carousel indicators as needed -->
+  </ol>
+</div>
+<div class="container-fluid">
+  <h1 style="padding-top: 30px;margin-left: 400px;color: darkorange;">Get Started With Fetch!</h1>
+  <button class="learn-more-btn" onclick="window.location.href='FindFetch.html'">Find Fetch Near You!</button>
+</div>
+<div id="contact" class="container-fluid" style="    background: linear-gradient(135deg, #FFFFFF, #D6E5FF, #B2CEFF, #8CB7FF, #6AA1FF, #5C8DFF, #4C7AFF, #3D66FF, #2F52FF);background-size: cover;">
+  <h1 class="text-center mb-4" style="padding-top: 30px;">Contact Us</h2>
+  <div class="contact-info">
+      <div class="left-info">
+          <h3 style="color: darkorange;">Main Branch:</h3>
+          <p>4-Goplananad Residency, Behind Parekhs Hospital, Satellite, Ahmedabad</p>
+      </div>
+      <div class="right-info">
+          <p>Email: info@yourpetcare.com</p>
+          <p>Phone: 9429355256</p>
+      </div>
+  </div>
+  <div class="footer-links">
+      <a href="privacy_policy.html">Privacy Policy</a>      
+      <a href="terms_of_use.html">Terms of Use</a>        
+      <a href="blogs.html">Blogs</a>         
+      <a href="https://facebook.com/your_page" target="_blank">Facebook</a> 
+      <a href="https://twitter.com/your_page" target="_blank">Twitter</a> 
+      <a href="https://instagram.com/your_page" target="_blank">Instagram</a>
+  </div>
+  <p style="color: darkorange;text-align: center; padding-top: 15px;padding-bottom: 20px;">2024 Fetch! Pet Care. All Rights Reserved.</p>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

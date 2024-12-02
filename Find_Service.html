@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pet Service Search</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel&family=DM+Serif+Display:ital@0;1&family=Handlee&family=Josefin+Sans:ital@0;1&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <style>
+    /* Custom CSS */
+    /* You can add your own custom styles here */
+    #select {
+      margin-top: 100px;
+      font-family: Arial, sans-serif;
+    }
+    .navbar {
+      transition: all 0.3s ease-in-out; 
+      height: 60px;
+      /* background-color: #007bff;  */
+      background: linear-gradient(135deg, #6DC4FF, #70A9FF, #7D98FF, #8D8DFF, #A085FF, #B27AFF, #C374FF, #D26EFF, #E06AFF);
+
+    }
+
+    .navbar-nav .nav-link {
+      color: whitesmoke !important;
+      font-weight: 400;
+      transition: color 0.3s; /* Transition effect on color change */
+    }
+
+    /* Navbar link hover effect */
+    .navbar-nav .nav-link:hover {
+      color: #ffc107 !important; /* Change color on hover */
+    }
+
+    /* Active link color */
+    .navbar-nav .nav-item.active .nav-link {
+      color: #ffc107 !important;
+    }
+
+    #branchDetails {
+      display: none; /* Initially hide the branch details */
+      /* background-color: #ebeff3; */
+      padding: 10px;
+      /* border-radius: 5px; */
+      margin-top: 40px;
+      height: auto;
+      width: 1100px;
+    }
+    #branchDetails p {
+      margin: 0;
+      font-size: 16px;
+      color: black;
+      text-align: left;
+    }
+   
+    #branchDetails h2 {
+      font-family: 'DM Serif Display', serif;
+      font-style: normal;color: darkorange;
+      margin-bottom: 10px;
+      text-align: center;
+      font-weight: 800;
+      font-size: 40px;
+    }
+    #branchDetails h3 {
+      color: #141413;
+      font-weight: 500;
+      margin-bottom: 10px;
+      text-align: left;
+      font-weight: 800;
+    }
+    #branchDetails h4 {
+      color: rgb(22, 126, 223);
+      font-weight: 500;
+      margin-top: 10px;
+      text-align: left;
+    }
+    /* .center{
+        position: absolute;
+        right: 250px;
+        width: 300px;
+        border: 3px solid #313130;
+        padding: 10px;
+    } */
+    .map{
+        width: 100%;
+        height: 800px;
+        border: 3px solid #fafaf7;
+        position: relative;
+        background-color: #00bcf0;
+        margin-top: 50px;
+    }
+    .img-fluid{
+      position: absolute;
+      right: 250px;
+      height: 780px;
+      width: 900px;
+    }
+    #contactFormContainer{
+      background-color: slategrey;margin-top: 30px;
+      color: white;
+      height: 1100px;
+    }
+
+    .contact-button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.message-container {
+      display: none;
+    }
+
+    .message-container:target {
+      display: block;
+    }
+    p{
+      font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+    }
+    .left-info, .right-info {
+    width: 45%;
+}
+
+.footer-links a {
+    margin-right: 10px;
+}
+.contact-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="Main.html"><img src="./Images/WhiteLogo.webp" style="height: 40px;width: 100px;"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="Main.html" >Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="FindFetch.html" >Find Fetch</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="Services.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                      Services
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="Services.html">Puppy Sitting</a>
+                      <a class="dropdown-item" href="Services.html">Dog Walking</a>
+                      <a class="dropdown-item" href="Services.html">Pet Sitting</a>
+                      <a class="dropdown-item" href="Services.html">Overnight Care</a>
+                      <a class="dropdown-item" href="Services.html">Emergency Commute</a>
+                      <a class="dropdown-item" href="Services.html">Pet Medical Administration</a>
+                    </div>
+                  </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Why_Fetch.html" >Why Fetch</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Reviews.html" >Reviews</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact" >Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+  <div class="container"  id="select">
+    <h1 class="text-center" style="font-family: 'DM Serif Display', serif;font-weight: 400;font-style: normal;color: darkorange;">Search Our Pet Service In Your Nearby City</h1>
+    <form id="searchForm" class="mt-4">
+      <div class="form-group">
+        <label for="city">Select City:</label>
+        <select class="form-control" id="city">
+          <option value="Mumbai">Mumbai</option>
+          <option value="Delhi">Delhi</option>
+          <option value="Bangalore">Bangalore</option>
+          <option value="Kolkata">Kolkata</option>
+          <option value="Chennai">Chennai</option>
+          <option value="Hyderabad">Hyderabad</option>
+          <option value="Pune">Pune</option>
+          <option value="Ahmedabad">Ahmedabad</option>
+          <option value="Jaipur">Jaipur</option>
+          <option value="Lucknow">Lucknow</option>
+          <option value="Kanpur">Kanpur</option>
+          <option value="Nagpur">Nagpur</option>
+          <option value="Visakhapatnam">Visakhapatnam</option>
+          <option value="Indore">Indore</option>
+          <option value="Thane">Thane</option>
+          <option value="Bhopal">Bhopal</option>
+          <option value="Patna">Patna</option>
+          <option value="Vadodara">Vadodara</option>
+          <option value="Ghaziabad">Surat</option>
+          <option value="Ludhiana">Ludhiana</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Search</button>
+      </div>
+    </form>
+    <div id="searchResults" class="mt-4">
+      <!-- Search results will be displayed here -->
+    </div>
+    <hr>
+    </div>
+    <div class="container-fluid">
+      <h3 style="text-align: center;font-family: 'Josefin',sans-serif;font-weight: 500;font-style: normal;">Our Services Across India</h3>
+    <div class="map" id="map">
+        <img src="./Images/MapofIndia.png" class="img-fluid">
+    </div>
+  </div>
+  <div class="container">
+    <hr>
+    <div class="text-center center" id="branchDetails">
+      <!-- Main Branch details will be displayed here -->
+    </div>
+  </div>
+  <!-- Form container -->
+<div class="container-fluid" id="contactFormContainer" >
+                <h2 class="text-center " style="padding: 20px 0px;font-family: 'Poppins',sans-serif;font-weight: 600;color: #141413;">Service Request</h2>
+                <form id="contactForm" class="form needs-validation" novalidate>
+                  <div class="mb-3">
+                    <label for="services" class="form-label" style="font-size: 18px;font-weight: 400px;">Select Services</label>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="puppy_programme" id="puppy_programme">
+                      <label class="form-check-label" for="puppy_programme">Puppy Programme</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="private_dog_walking" id="private_dog_walking">
+                      <label class="form-check-label" for="private_dog_walking">Private Dog Walking</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="In-home_pet_sitting" id="In-home_pet_sitting">
+                      <label class="form-check-label" for="In-home_pet_sitting">In-home pet sitting</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="Daycare_in_client's_house" id="Daycare_in_client's_house">
+                      <label class="form-check-label" for="Daycare_in_client's_house">Day care in client's house</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="daycare_in_sitters_house" id="daycare_in_sitters_house">
+                        <label class="form-check-label" for="daycare_in_sitters_house">Day care in sitter's house</label>
+                      </div>
+                      
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="farm_animal_care" id="farm_animal_care">
+                        <label class="form-check-label" for="farm_animal_care">Farm Animal Care</label>
+                      </div>
+                      
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="in_home_overnight_sitting" id="in_home_overnight_sitting">
+                        <label class="form-check-label" for="in_home_overnight_sitting">In-home overnight Sitting</label>
+                      </div>
+                      
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="home_care" id="home_care">
+                        <label class="form-check-label" for="home_care">Home Care</label>
+                      </div>
+                      
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="horse_care" id="horse_care">
+                        <label class="form-check-label" for="horse_care">Horse Care</label>
+                      </div>
+                      
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="pet_taxi" id="pet_taxi">
+                        <label class="form-check-label" for="pet_taxi">Pet Taxi</label>
+                      </div>
+                      
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="pet_medical_administration" id="pet_medical_administration">
+                        <label class="form-check-label" for="pet_medical_administration">Pet Medical Administration</label>
+                      </div>
+                      
+                    <!-- Add other services checkboxes here -->
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label for="yourName" class="form-label" style="font-size: 18px;font-weight: 400px;">Your Name</label>
+                      <input type="text" class="form-control" id="yourName" placeholder="Enter your name" required>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="petName" class="form-label" style="font-size: 18px;font-weight: 400px;">Pet Name</label>
+                      <input type="text" class="form-control" id="petName" placeholder="Enter your pet's name" required>
+                    </div>
+                  </div>
+                  <div class="mb-3 row">
+                    <div class="col">
+                      <label for="email" class="form-label" style="font-size: 18px;font-weight: 400px;">Email address</label>
+                      <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="col">
+                      <label for="phoneNumber" class="form-label" style="font-size: 18px;font-weight: 400px;">Phone Number</label>
+                      <input type="tel" class="form-control" id="phoneNumber" placeholder="Enter your phone number" required>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="petType" class="form-label" style="font-size: 18px;font-weight: 400px;">Select Pet Type</label>
+                    <br>
+                    <select class="form-select" id="petType">
+                      <option selected disabled>Select Pet Type</option>
+                      <option value="dog">Dog</option>
+                      <option value="cat">Cat</option>
+                      <option value="bird">Bird</option>
+                      <option value="fish">Fish</option>
+                      <option value="horse">Horse</option>
+                      <option value="rabbit">Rabbit</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                    <label for="address" class="form-label" style="font-size: 18px;font-weight: 400px;">Address</label>
+                    <input type="text" class="form-control" id="address" placeholder="Enter your address" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="city" class="form-label" style="font-size: 18px;font-weight: 400px;">City</label>
+                    <input type="text" class="form-control" id="city" placeholder="Enter your city" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="helpTextarea" class="form-label" style="font-size: 18px;font-weight: 400px;">How can I help?</label>
+                    <textarea class="form-control" id="helpTextarea" rows="3" placeholder="Enter your message" required></textarea>
+                  </div>
+                  <div class="mb-3" style="margin-left: 550px;margin-bottom: 20px;">
+                  <button type="submit" class="btn btn-primary"><a href="#message" style="color: white; text-decoration: none;">Request Service</a></button>
+                 </div>
+                </form>
+              </div>
+            </div>
+  </div>
+  <div class="modal fade" id="messageModal" tabindex="-1" aria-labelledby="messageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="messageModalLabel">Success!</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Your request has been submitted!
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div id="contact" class="container-fluid" style="  background: linear-gradient(135deg, #FFFFFF, #D5E5FF, #B2CEFF, #8CB7FF, #5AA1FF, #5C8DFF, #4C7AFF, #3D55FF, #2F52FF)    ;background-size: cover;">
+    <h1 class="text-center mb-4" style="padding-top: 30px;">Contact Us</h2>
+    <div class="contact-info">
+        <div class="left-info">
+            <h3 style="color: darkorange;">Main Branch</h3>
+            <p>4- Gopalanad Residency, Behind Parekhs Hospital, Satellite, Ahmedabad</p>
+        </div>
+        <div class="right-info">
+            <p>Email: info@yourpetcare.com</p>
+            <p>Phone: 9429355255</p>
+        </div>
+    </div>
+    <div class="footer-links">
+        <a href="privacy_policy.html">Privacy Policy</a>      
+        <a href="terms_of_use.html">Terms of Use</a>        
+        <a href="blogs.html">Blogs</a>         
+        <a href="https://facebook.com/your_page" target="_blank">Facebook</a> 
+        <a href="https://twitter.com/your_page" target="_blank">Twitter</a> 
+        <a href="https://instagram.com/your_page" target="_blank">Instagram</a>
+    </div>
+    <p style="color: white;text-align: center; padding-top: 15px;padding-bottom: 20px;">2024 Fetch! Pet Care. All Rights Reserved.</p>
+</div>
+
+  
+
+  <!-- Bootstrap JS and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>  
+</body>
+</html>
